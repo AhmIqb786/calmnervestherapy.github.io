@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calm Nerves Therapy — Psychotherapy for Adults, Young Adults & Children</title>
+<meta name="description" content="Compassionate, evidence-based counselling for stress-related concerns. One-to-one and group sessions. First 30 minutes free.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F2F0E6;
+    --paper-card: #FBFAF6;
+    --ink: #23231F;
+    --ink-soft: #5B5C52;
+    --deep: #1E3A34;
+    --deep-2: #16302B;
+    --deep-text: #E9EEE9;
+    --gold: #C9A15C;
+    --gold-soft: #E4CFA0;
+    --line: #DAD5C3;
+    --radius: 14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--gold);
+  }
+  section{padding:96px 0;}
+  @media (max-width:720px){ section{padding:64px 0;} .wrap{padding:0 22px;} }
+
+  /* NAV */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(242,240,230,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1160px; margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'Fraunces', serif; font-weight:500; font-size:19px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .brand-mark{width:26px;height:26px;flex:none;}
+  nav.links{display:flex; gap:32px; align-items:center;}
+  nav.links a{
+    font-size:14.5px; font-weight:500; text-decoration:none; color:var(--ink);
+    opacity:0.75; transition:opacity .2s;
+  }
+  nav.links a:hover{opacity:1;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:999px;
+    font-weight:600; font-size:14.5px; text-decoration:none;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    border:none; cursor:pointer;
+  }
+  .btn-gold{background:var(--gold); color:#1E1A10;}
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(201,161,92,0.6);}
+  .btn-ghost{background:transparent; color:var(--deep-text); border:1px solid rgba(233,238,233,0.4);}
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);}
+  .nav-cta{display:none;}
+  @media (min-width:860px){ .nav-cta{display:inline-flex;} }
+  #menuBtn{display:none; background:none; border:none; font-size:26px; color:var(--ink); cursor:pointer;}
+  @media (max-width:859px){
+    nav.links{
+      position:fixed; inset:64px 16px auto 16px; background:var(--paper-card);
+      border:1px solid var(--line); border-radius:16px; padding:18px;
+      flex-direction:column; align-items:flex-start; gap:16px;
+      box-shadow:0 20px 40px -12px rgba(0,0,0,0.18);
+      transform-origin:top; transform:scaleY(0); opacity:0; pointer-events:none;
+      transition:transform .22s ease, opacity .22s ease;
+    }
+    nav.links.open{transform:scaleY(1); opacity:1; pointer-events:auto;}
+    #menuBtn{display:block;}
+  }
+
+  /* HERO */
+  .hero{
+    position:relative; overflow:hidden;
+    background:radial-gradient(120% 140% at 15% 0%, var(--deep) 0%, var(--deep-2) 62%, #10221E 100%);
+    color:var(--deep-text);
+    padding:88px 0 0;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.85fr; gap:48px; align-items:center;
+  }
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero h1{
+    font-size:clamp(34px, 5.2vw, 58px);
+    line-height:1.06;
+    margin:18px 0 22px;
+    color:#F5F2E9;
+  }
+  .hero h1 em{font-style:italic; color:var(--gold-soft);}
+  .hero p.lede{
+    font-size:17.5px; max-width:46ch; color:#C9D2CB; margin-bottom:32px;
+  }
+  .hero-actions{display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-bottom:20px;}
+  .trust-line{
+    display:flex; align-items:center; gap:10px; font-size:13.5px; color:#AEBBB2;
+    margin-top:8px; letter-spacing:0.01em;
+  }
+  .trust-line .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .hero-photo-wrap{position:relative; justify-self:center;}
+  .hero-photo{
+    width:min(340px, 82vw); border-radius:20px; object-fit:cover;
+    box-shadow:0 40px 80px -24px rgba(0,0,0,0.55);
+    border:1px solid rgba(233,238,233,0.14);
+    position:relative; z-index:2;
+  }
+  .photo-badge{
+    position:absolute; z-index:3; right:-10px; bottom:-16px;
+    background:var(--gold); color:#1E1A10; border-radius:14px;
+    padding:14px 18px; box-shadow:0 20px 30px -10px rgba(0,0,0,0.4);
+    font-family:'Fraunces', serif;
+  }
+  .photo-badge b{display:block; font-size:26px; line-height:1;}
+  .photo-badge span{display:block; font-family:'Inter',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.04em; margin-top:4px;}
+  .nerve-glow{
+    position:absolute; inset:-40px -60px auto auto; width:420px; opacity:0.5; z-index:1;
+  }
+  .hero-wave{display:block; width:100%; height:auto; margin-top:56px;}
+
+  /* SECTION HEADS */
+  .section-head{max-width:620px; margin-bottom:48px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,38px); margin-top:14px; color:var(--ink);}
+  .section-head p{color:var(--ink-soft); margin-top:14px; font-size:16px;}
+  .section-head.on-dark h2{color:#F5F2E9;}
+  .section-head.on-dark p{color:#C9D2CB;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;}
+  @media (max-width:820px){.about-grid{grid-template-columns:1fr;}}
+  .about-card{
+    background:var(--paper-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; box-shadow:0 1px 0 rgba(0,0,0,0.02);
+  }
+  .about-card .name{font-size:20px; margin-top:14px;}
+  .about-card .role{color:var(--ink-soft); font-size:14px; margin-top:4px;}
+  .about-body p{color:var(--ink-soft); font-size:16.5px;}
+  .about-body p.lead{color:var(--ink); font-size:18.5px; font-family:'Fraunces',serif; font-weight:400; line-height:1.5;}
+  .credentials{list-style:none; padding:0; margin:24px 0 0; display:grid; gap:12px;}
+  .credentials li{display:flex; gap:12px; font-size:15px; color:var(--ink-soft); align-items:flex-start;}
+  .credentials svg{flex:none; margin-top:2px;}
+
+  /* SERVICES */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:860px){.services-grid{grid-template-columns:1fr;}}
+  .service-card{
+    background:var(--paper-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:30px 26px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .service-card:hover{transform:translateY(-4px); box-shadow:0 24px 40px -20px rgba(30,58,52,0.25); border-color:transparent;}
+  .service-icon{width:42px;height:42px; margin-bottom:18px;}
+  .service-card h3{font-size:19px; margin-bottom:10px;}
+  .service-card p{color:var(--ink-soft); font-size:15px; margin:0;}
+
+  /* SESSIONS / PRICING */
+  .sessions{background:var(--deep); color:var(--deep-text); border-radius:24px; margin:0 auto;}
+  .sessions-inner{padding:64px 40px;}
+  @media (max-width:720px){.sessions-inner{padding:44px 24px;}}
+  .steps{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:44px;}
+  @media (max-width:760px){.steps{grid-template-columns:1fr;}}
+  .step{
+    border:1px solid rgba(233,238,233,0.16); border-radius:16px; padding:28px;
+    background:rgba(255,255,255,0.03); position:relative;
+  }
+  .step .num{
+    font-family:'Fraunces', serif; font-size:14px; color:var(--gold-soft);
+    letter-spacing:0.1em;
+  }
+  .step h3{color:#F5F2E9; font-size:22px; margin:14px 0 10px;}
+  .step .price{
+    display:inline-block; font-family:'Fraunces',serif; font-size:15px;
+    color:var(--gold-soft); border:1px solid rgba(228,207,160,0.4);
+    padding:4px 12px; border-radius:999px; margin-bottom:14px;
+  }
+  .step p.desc{color:#C9D2CB; font-size:15px; margin:0;}
+  .step.arrow::after{
+    content:"→"; position:absolute; right:-30px; top:50%; transform:translateY(-50%);
+    color:var(--gold); font-size:22px;
+  }
+  @media (max-width:760px){ .step.arrow::after{display:none;} }
+  .format-note{
+    margin-top:32px; display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+    font-size:14.5px; color:#AEBBB2;
+  }
+  .format-note .pill{
+    border:1px solid rgba(233,238,233,0.25); border-radius:999px; padding:7px 14px;
+  }
+
+  /* STATS */
+  .stats-band{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px;
+  }
+  @media (max-width:760px){.stats-band{grid-template-columns:1fr;}}
+  .stat{text-align:left; padding:8px 0;}
+  .stat .big{font-family:'Fraunces',serif; font-size:44px; color:var(--deep);}
+  .stat .label{color:var(--ink-soft); font-size:14.5px; margin-top:6px;}
+  .trust-wave{width:100%; opacity:0.5; margin-top:36px;}
+
+  /* CONTACT */
+  .contact-card{
+    background:var(--deep); color:var(--deep-text); border-radius:24px;
+    padding:64px 48px; text-align:center;
+  }
+  @media (max-width:720px){.contact-card{padding:44px 24px;}}
+  .contact-card h2{color:#F5F2E9; font-size:clamp(28px,4vw,40px);}
+  .contact-card p{color:#C9D2CB; max-width:52ch; margin:16px auto 32px; font-size:16.5px;}
+  .contact-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .email-line{margin-top:22px; font-size:14.5px; color:#AEBBB2;}
+  .email-line a{color:var(--gold-soft); text-decoration:underline; text-underline-offset:3px;}
+
+  /* FOOTER */
+  footer{padding:40px 0 60px; border-top:1px solid var(--line); margin-top:20px;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-inner .brand{font-size:16px;}
+  .footer-links{display:flex; gap:22px; font-size:14px; color:var(--ink-soft);}
+  .footer-links a{text-decoration:none;}
+  .footer-links a:hover{color:var(--ink);}
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transition:none; opacity:1; transform:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 18 L8 6 L11 22 L14 12 L17 18 L20 15 L24 15 L30 18" stroke="#1E3A34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      Calm Nerves Therapy
+    </div>
+    <button id="menuBtn" aria-label="Toggle menu">☰</button>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Who I Help</a>
+      <a href="#sessions">Sessions &amp; Pricing</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#contact" style="padding:9px 18px;">Book Free Session</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">One-to-one &amp; group therapy · online, worldwide</span>
+        <h1>Steady the noise. <br><em>Find your calm.</em></h1>
+        <p class="lede">Compassionate, evidence-based counselling for adults, young adults, and children carrying stress, anxiety, and everyday overload — met with a calm, judgement-free space.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact">Book Your Free 30-Minute Session</a>
+          <a class="btn btn-ghost" href="#sessions">See how sessions work</a>
+        </div>
+        <div class="trust-line"><span class="dot"></span> Trusted by 200+ clients across the world with stress-related concerns</div>
+      </div>
+      <div class="hero-photo-wrap">
+        <svg class="nerve-glow" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 150 L20 90 L40 210 L60 70 L80 190 L100 110 L120 160 C160 130 180 170 220 150 C260 130 300 170 340 150 C360 140 380 150 400 150"
+            stroke="#C9A15C" stroke-width="2" fill="none" opacity="0.55"/>
+        </svg>
+        <img class="hero-photo" src="assets/therapist.jpg" alt="Ahmed, licensed psychotherapist and founder of Calm Nerves Therapy">
+        <div class="photo-badge"><b>200+</b><span>CLIENTS HELPED<br>WORLDWIDE</span></div>
+      </div>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path id="nerveLine" d="M0,100 L40,25.42 L80,169.17 L120,36.25 L160,158.33 L200,47.08 L240,147.5 L280,57.92 L320,136.67 L360,68.75 L400,125.83 L440,79.58 L480,115 C520,85 560,85 600,100 C640,115 680,115 720,100 C760,85 800,85 840,100 C880,115 920,115 960,100 C1000,85 1040,85 1080,100 C1120,115 1160,115 1200,100"
+        fill="none" stroke="#C9A15C" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-card">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M2 18 L8 6 L11 22 L14 12 L17 18 L20 15 L24 15 L30 18" stroke="#C9A15C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <div class="name">Ahmed</div>
+          <div class="role">Founder &amp; Psychotherapist, Calm Nerves Therapy</div>
+          <ul class="credentials">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#1E3A34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Licensed psychotherapist <em>(add your licensing body &amp; number)</em></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#1E3A34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Works with adults, young adults &amp; children</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="#1E3A34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One-to-one &amp; small group sessions, online</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal about-body">
+        <span class="eyebrow">About your therapist</span>
+        <h2 style="margin-top:14px; font-size:clamp(26px,3.4vw,34px);">A calm, steady space to be heard</h2>
+        <p class="lead">I'm Ahmed — I help people move from constant alertness to a place of steadiness, one honest conversation at a time.</p>
+        <p>Over the years, I've supported more than 200 clients across the world through stress, anxiety, burnout, and the kind of overwhelm that quietly builds up in a fast-moving life. My approach blends evidence-based methods with a warm, unhurried presence — whether we're meeting one-to-one or as part of a small group.</p>
+        <p>There's no pressure and no assumptions at the first meeting. We simply talk, and figure out together what steady would look like for you.</p>
+        <p style="font-size:13.5px; color:var(--ink-soft); border-top:1px dashed var(--line); padding-top:14px; margin-top:20px;">✏️ Edit note: replace this paragraph with your real qualifications, years of practice, and therapeutic approach (e.g. CBT, person-centred, etc.).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--paper-card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Who I help</span>
+      <h2>Support at every stage of life</h2>
+      <p>Stress shows up differently depending on where you are in life. Sessions are shaped around you, not a script.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="20" stroke="#C9A15C" stroke-width="1.6"/><path d="M14 24c1.5-4 5-4.5 7-4.5s5.5.5 7 4.5" stroke="#1E3A34" stroke-width="1.8" stroke-linecap="round"/><circle cx="21" cy="15" r="3.4" stroke="#1E3A34" stroke-width="1.8"/></svg>
+        <h3>Adults</h3>
+        <p>Work stress, burnout, relationship strain, and the low hum of anxiety that comes from carrying too much for too long.</p>
+      </div>
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="20" stroke="#C9A15C" stroke-width="1.6"/><path d="M13 26c1.3-3.6 4.6-4 8-4s6.7.4 8 4" stroke="#1E3A34" stroke-width="1.8" stroke-linecap="round"/><circle cx="21" cy="16" r="3" stroke="#1E3A34" stroke-width="1.8"/></svg>
+        <h3>Young Adults</h3>
+        <p>Life transitions, identity, academic and career pressure, and finding steady ground while everything still feels new.</p>
+      </div>
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="20" stroke="#C9A15C" stroke-width="1.6"/><path d="M15 25c1-2.8 3.6-3 6-3s5 .2 6 3" stroke="#1E3A34" stroke-width="1.8" stroke-linecap="round"/><circle cx="21" cy="17" r="2.6" stroke="#1E3A34" stroke-width="1.8"/></svg>
+        <h3>Children</h3>
+        <p>Age-appropriate, gentle support for worry, big emotions, and the stress that often shows up as behaviour at home or school.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sessions">
+  <div class="wrap">
+    <div class="sessions reveal">
+      <div class="sessions-inner">
+        <span class="eyebrow">How it works &amp; pricing</span>
+        <h2 style="color:#F5F2E9; margin-top:14px; font-size:clamp(26px,3.6vw,36px);">Start free. Continue at your pace.</h2>
+        <p style="color:#C9D2CB; max-width:56ch; margin-top:14px;">Available one-to-one or in a small group — whichever feels right for you.</p>
+
+        <div class="steps">
+          <div class="step arrow">
+            <span class="num">SESSION 01</span>
+            <h3>Free Introduction</h3>
+            <span class="price">Free · 30 minutes</span>
+            <p class="desc">We meet, you talk, I listen. No cost and no obligation — just space to be heard and a first sense of whether we're a good fit.</p>
+          </div>
+          <div class="step">
+            <span class="num">SESSION 02+</span>
+            <h3>Continuing Support</h3>
+            <span class="price">€20 · 30 minutes</span>
+            <p class="desc">If it feels right, we continue at a pace that works for you — one-to-one or as part of a small group.</p>
+          </div>
+        </div>
+
+        <div class="format-note">
+          <span class="pill">🌍 100% online, anywhere in the world</span>
+          <span class="pill">🧑 One-to-one available</span>
+          <span class="pill">👥 Small group sessions available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="section-head">
+      <span class="eyebrow">Why clients come back</span>
+      <h2>Support that's already reached 200+ people</h2>
+      <p>A track record built one honest conversation at a time, across borders and time zones.</p>
+    </div>
+    <div class="stats-band">
+      <div class="stat">
+        <div class="big">200+</div>
+        <div class="label">Clients supported with stress-related concerns, worldwide</div>
+      </div>
+      <div class="stat">
+        <div class="big">3</div>
+        <div class="label">Age groups served — adults, young adults &amp; children</div>
+      </div>
+      <div class="stat">
+        <div class="big">€20</div>
+        <div class="label">Per 30-minute session after your first, free meeting</div>
+      </div>
+    </div>
+    <svg class="trust-wave" viewBox="0 0 1200 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 L20,15 L40,60 L60,10 L80,55 L100,20 L120,50 C160,35 200,45 260,40 C340,33 420,47 500,40 C620,30 700,50 800,40 C900,32 1000,48 1200,40"
+        stroke="#1E3A34" stroke-width="1.6" fill="none" opacity="0.28"/>
+    </svg>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <span class="eyebrow" style="color:var(--gold-soft);">Get in touch</span>
+      <h2 style="margin-top:14px;">Ready to feel steadier?</h2>
+      <p>Reach out for your free 30-minute session. No pressure — just a conversation, wherever you are in the world.</p>
+      <div class="contact-actions">
+        <a class="btn btn-gold" href="mailto:ahmedorromi@gmail.com?subject=Free%2030-Minute%20Session%20Request&body=Hi%20Ahmed%2C%0A%0AI%27d%20like%20to%20book%20my%20free%2030-minute%20session.%0A%0AA%20little%20about%20what%20I%27m%20going%20through%3A%0A%0APreferred%20days%2Ftimes%3A">Email to Book Your Free Session</a>
+        <a class="btn btn-ghost" href="mailto:ahmedorromi@gmail.com">Just Ask a Question</a>
+      </div>
+      <div class="email-line">Or write directly to <a href="mailto:ahmedorromi@gmail.com">ahmedorromi@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none"><path d="M2 18 L8 6 L11 22 L14 12 L17 18 L20 15 L24 15 L30 18" stroke="#1E3A34" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      Calm Nerves Therapy
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Who I Help</a>
+      <a href="#sessions">Pricing</a>
+      <a href="mailto:ahmedorromi@gmail.com">ahmedorromi@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // hero line draw-in
+  const nerveLine = document.getElementById('nerveLine');
+  if (nerveLine) {
+    const len = nerveLine.getTotalLength();
+    nerveLine.style.strokeDasharray = len;
+    nerveLine.style.strokeDashoffset = len;
+    requestAnimationFrame(() => {
+      nerveLine.style.transition = 'stroke-dashoffset 1.8s ease';
+      nerveLine.style.strokeDashoffset = '0';
+    });
+  }
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
